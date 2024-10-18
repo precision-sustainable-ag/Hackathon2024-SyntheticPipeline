@@ -23,9 +23,11 @@ class MongoDBDataLoader:
             cfg (DictConfig): OmegaConf DictConfig object containing the configuration settings.
         """
         self.cfg = cfg
-        self.client = MongoClient(
-            f'mongodb://admin:psa2023@{cfg.mongodb.host}:{cfg.mongodb.port}/?authSource=admin'
-        )
+        self.client = MongoClient(cfg.mongodb.host,
+                                  username=cfg.mongodb.username,
+                                  password=cfg.mongodb.password,
+                                  authSource=cfg.mongodb.auth_source,
+                                  authMechanism=cfg.mongodb.auth_mechanism)
         self.db = self.client[cfg.mongodb.db]
         self.collection = self.db[cfg.mongodb.collection]
 
