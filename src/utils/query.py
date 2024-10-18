@@ -24,7 +24,11 @@ class MongoDBQueryHandler:
             mongo_url (str): MongoDB connection URL.
         """
         self.cfg = cfg
-        self.client = MongoClient(f'mongodb://{cfg.mongodb.host}:{cfg.mongodb.port}/')
+        self.client = MongoClient(cfg.mongodb.host,
+                                  username=cfg.mongodb.username,
+                                  password=cfg.mongodb.password,
+                                  authSource=cfg.mongodb.auth_source,
+                                  authMechanism=cfg.mongodb.auth_mechanism)
         self.db = self.client[cfg.mongodb.db]
         self.collection = self.db[cfg.mongodb.collection]
         self.output_file = Path(self.cfg.paths.resultsdir, cfg.general.project_name + ".json")
