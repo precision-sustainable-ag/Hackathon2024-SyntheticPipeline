@@ -33,7 +33,11 @@ aws:
   s3_bucket: psi-hackathon
 
 mongodb:
-  host: 34.204.84.57
-  port: 27017
+  host:
+  port:
   db: hackathon_db
   collection: cutouts
+  auth_source: hackathon_db
+  auth_mechanism: SCRAM-SHA-1
+  username:
+  password:
