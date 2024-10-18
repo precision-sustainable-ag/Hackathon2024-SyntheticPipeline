@@ -1,0 +1,83 @@
+# Settings
+
+total_images: 500
+
+cuts_n_image: # Number of cutouts per image
+  min: 50
+  max: 200
+
+reuse_cutouts: true  # Whether to allow reusing cutouts in multiple images
+
+morphological:
+  # Filter settings for morphological properties under "cutout_props"
+  area:  # Area range in pixels
+    min: 1000
+    max: 10000000000
+  blur_effect:  # Blur effect threshold
+    min: 
+    max: 
+  eccentricity:  # Eccentricity range
+    min: 
+    max: 
+  extends_border: false  # Only include cutouts that extend the border
+  num_components: # Number of components range
+    min:
+    max:
+  solidity:  # Solidity threshold
+    min:
+    max: 
+  green_sum:  # Green sum range
+    min: 
+    max: 
+  is_primary: true
+  perimeter:  # Perimeter range
+    min: 
+    max: 
+
+category:
+  # Filter settings for category attributes
+  family:  # Exact family
+  genus:   # Exact genus
+  group:   # Exact group
+  duration: #["annual", "biennial"]  # Include either annual or biennial plants
+  growth_habit: #["graminoid", "forb/herb"]  # Growth habit
+  species:   # Exact species
+  subclass:   # Exact subclass
+  common_name: 
+    - Black oats
+    - Giant foxtail
+    - Goosegrass
+    - Large crabgrass
+    - Oats
+    - Purple nutsedge
+    - Sprawling signalgrass
+    - Yellow foxtail
+    - Cocklebur
+    - Common lambsquarters
+    - Horseweed
+    - Jimson weed
+    - Palmer amaranth
+    - Prickly sida
+    - Smooth pigweed
+    - Velvetleaf
+    - Maize
+
+common_name_weights:
+    # Black oats: 0.1
+    # Giant foxtail: 0.1
+    # Goosegrass: 0.1
+    # Large crabgrass: 0.1
+    # Oats: 0.1
+    # Purple nutsedge: 0.1
+    # Sprawling signalgrass: 0.1
+    # Yellow foxtail: 0.1
+    # Cocklebur: 0.1
+    # Common lambsquarters: 0.1
+    # Horseweed: 0.1
+    # Jimson weed: 0.1
+    # Palmer amaranth: 0.1
+    # Prickly sida: 0.1
+    # Smooth pigweed: 0.1
+    # Velvetleaf: 0.1
+    # Maize: 0.1
+    
